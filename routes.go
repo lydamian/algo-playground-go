@@ -24,6 +24,6 @@ import (
 // },
 
 func RegisterRoutes(r *mux.Router) {
-	r.HandleFunc("/hello", SayHelloHandler).Methods("GET")
-	r.HandleFunc("/recommendations", GetRecommendationsHandler).Methods("GET")
+	r.HandleFunc("/ping", PingPongHandler).Methods("GET")
+	r.HandleFunc("/api/recommendations", GetRecommendationsHandler).Methods("GET")
 }
