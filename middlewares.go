@@ -20,7 +20,7 @@ func RequestLoggerMiddleware(l zerolog.Logger) mux.MiddlewareFunc {
 			ctx := r.Context()
 			path := r.URL.EscapedPath()
 			reqData, _ := httputil.DumpRequest(r, false)
-			logger := l.Log().Timestamp().Str("path", path).Bytes("request_data", reqData)
+			logger := l.Info().Timestamp().Str("path", path).Bytes("request_data", reqData)
 			defer func(begin time.Time) {
 				status := ww.Status()
 				tookMs := time.Since(begin).Milliseconds()
